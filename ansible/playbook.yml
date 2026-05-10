@@ -9,6 +9,7 @@
 
     - name: Shutdown Tomcat
       shell: /opt/tomcat/bin/shudown.sh
+      ignore_errors: yes
 
     - name: Start Tomcat
       shell: /opt/tomcat/bin/startup.sh
