@@ -3,9 +3,10 @@
   become: yes
   tasks: 
     - name: Copy WAR file to Tomcat
-      src: "/var/snap/jenkins/5022/workspace/My Ansible Web App/target/MavenAnsibleWebApp.war"
-      dest: "/opt/tomcat/webapps/MavenAnsibleWebApp.war"
-      remote_src: no
+      copy:
+        src: "/var/snap/jenkins/5022/workspace/My Ansible Web App/target/MavenAnsibleWebApp.war"
+        dest: "/opt/tomcat/webapps/MavenAnsibleWebApp.war"
+        remote_src: no
 
     - name: Shutdown Tomcat
       shell: /opt/tomcat/bin/shudown.sh
